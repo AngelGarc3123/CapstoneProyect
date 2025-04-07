@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cita Médica - Gestión de Citas</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+
+<!-- Barra de Navegación Mejorada -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3 fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="{{ url_for('static', filename='serpiente.webp') }}" alt="Logo de CitaMédica" width="50" height="50" class="rounded-circle me-2 border border-light shadow-sm">
+      <span style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-left: 10px;">Cita<span style="color: var(--primary-color);">Médica</span></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <a class="nav-link text-dark font-weight-bold scroll-offset" href="#about">Características</a>
+      <a class="nav-link text-dark font-weight-bold scroll-offset" href="#nosotros">Sobre Nosotros</a>
+      <a class="nav-link text-dark font-weight-bold scroll-offset" href="#contact">Contacto</a>
+      <div class="ms-lg-3 mt-3 mt-lg-0">
+        <a href="/login" class="btn btn-outline-warning me-2 px-4 py-2 rounded-pill" style="color: var(--primary-color); border-color: var(--primary-color); transition: background-color 0.3s, color 0.3s;" onmouseover="this.style.backgroundColor='mintcream'; this.style.color='var(--primary-color)';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='var(--primary-color)';">Iniciar Sesión</a>
+        <a href="/signup" class="btn btn-primary px-4 py-2 rounded-pill" style="background-color: var(--primary-color); border: none;">Registrarse</a>
+      </div>
+    </div>
+  </div>
+</nav>
+  <!-- Tarjeta (Hero) con el saludo principal mejorada -->
+  <div class="container mt-5 pt-5">
+    <div class="hero-card shadow-lg position-relative overflow-hidden">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-left">
+          <h1 class="display-4 font-weight-bold">Bienvenido a CitaMédica</span></h1>
+          <p class="lead mt-3">
+            Simplificamos la gestión de citas y el acceso a historiales clínicos para brindar 
+            una atención de salud eficiente, segura y organizada.
+          </p>
+          <a class="btn btn-lg btn-light mt-3 px-5 py-2" href="{{ url_for('login') }}" role="button" style="background-color: var(--accent-color); color: #fff; font-weight: bold; border-radius: 25px;">Agendar Cita</a>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="{{ url_for('static', filename='Bienvenido_index.jpg') }}" alt="Bienvenido a CitaMédica" class="img-fluid rounded-circle shadow-lg" style="max-height: 250px; border: 5px solid var(--primary-color);">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Sección de Estadísticas -->
+<section class="stats-section mt-5">
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <h2 class="section-title mb-3 position-relative text-center" style="color: var(--primary-color); font-size: 2.5rem;">
+        ¡Simplifica tu atención médica con nosotros!
+      </h2>
+    </div>
+    <div class="text-center">
+      <p class="lead mb-4" style="color: #555; font-size: 2rem; font-weight: bold;"></p>
+      Descubre cómo nuestra plataforma puede transformar tu experiencia médica con herramientas modernas y fáciles de usar. Únete a miles de profesionales de la salud que ya gestionan citas, historiales clínicos y atención a pacientes desde una sola plataforma ágil, segura y en la nube.
+      </p>
+    </div>
+    <div class="stats-row text-center">
+      <div class="stats-item">
+        <img src="{{ url_for('static', filename='Usuario.png') }}" alt="Usuarios Registrados" class="img-fluid">
+        <h3>1,200+</h3>
+        <p>Usuarios Registrados</p>
+      </div>
+      <div class="stats-item">
+        <img src="{{ url_for('static', filename='Corazon.png') }}" alt="Médicos Activos" class="img-fluid">
+        <h3>150+</h3>
+        <p>Médicos Activos</p>
+      </div>
+      <div class="stats-item">
+        <img src="{{ url_for('static', filename='Clinica.png') }}" alt="Países Alcanzados" class="img-fluid">
+        <h3>10+</h3>
+        <p>Países Alcanzados</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
+    
+    <!-- Sección de Información -->
+    <section class="info-section container mt-5">
+    <div class="row align-items-center info-row">
+      <!-- Texto e información -->
+      <div class="col-md-6 info-text" style="padding-left: 20px;">
+        <h2 class="section-title mb-3" style="color: var(--primary-color); font-size: 2.5rem;">¿Qué ofrecemos?</h2>
+      <p class="lead mb-4">
+        En <strong>CitaMédica</strong>, modernizamos el proceso de atención médica, permitiendo a los pacientes agendar citas de manera ágil y a los profesionales de la salud gestionar la información clínica en un solo lugar.
+      </p>
+      <ul class="list-unstyled">
+        <li class="mb-2">
+        <strong>Agendamiento de Citas:</strong> Reserva tus citas fácilmente y recibe recordatorios automáticos.
+        </li>
+        <li class="mb-2">
+        <strong>Historial Clínico:</strong> Acceso rápido y seguro a tus registros médicos para una atención de calidad.
+        </li>
+        <li class="mb-2">
+        <strong>Registro de Usuarios:</strong> Perfiles organizados para pacientes y profesionales de la salud.
+        </li>
+      </ul>
+      </div>
+      <!-- Imagen ilustrativa -->
+      <div class="col-md-6 text-center">
+      <img src="{{ url_for('static', filename='Funcionamiento_App.webp') }}" alt="Funcionamiento de la App" class="img-fluid shadow info-image">
+      </div>
+    </div>
+    </section>
+  
+  
+  <!-- Sección de Características -->
+<div id="about" class="container my-5">
+    <div class="card shadow-lg position-relative overflow-hidden" style="background-color: #F8F9FA; border-radius: 25px; border: none;">
+      <div class="card-body">
+        <section class="features-section text-center mb-5">
+          <h2 class="section-title mb-3 position-relative" style="color: var(--primary-color); font-size: 2.5rem;">
+            Características Destacadas
+          </h2>
+        </section>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='pc.png') }}" alt="Reserva Inteligente" class="img-fluid mb-3" style="max-height: 100px;">
+            <h4 style="color: var(--primary-color);">Reserva Inteligente</h4>
+            <p style="color: #555;"></p>
+              Nuestro sistema de agendamiento te sugiere horarios disponibles y 
+              envía recordatorios para reducir ausencias y olvidos.
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='books.png') }}" alt="Seguridad de Datos" class="img-fluid mb-3" style="max-height: 100px;">
+            <h4 style="color: var(--primary-color);">Seguridad de Datos</h4>
+            <p style="color: #555;"></p>
+              Todos los historiales y datos personales se almacenan con 
+              protocolos de seguridad para proteger tu privacidad.
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='bombillo.png') }}" alt="Experiencia Sencilla" class="img-fluid mb-3" style="max-height: 100px;">
+            <h4 style="color: var(--primary-color);">Experiencia Sencilla</h4>
+            <p style="color: #555;"></p>
+              Interfaz intuitiva que facilita la navegación para pacientes de todas las edades 
+              y profesionales con distintas necesidades.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- Sección "Sobre Nosotros" Mejorada -->
+<div id="nosotros" section class="about-section container mt-5">
+  <div class="row align-items-center info-row">
+    <!-- Imagen ilustrativa -->
+    <div class="col-md-6 text-center">
+      <img src="{{ url_for('static', filename='logo_uni.jpeg') }}" alt="Funcionamiento de la App" class="img-fluid shadow info-image" style="max-height: 300px; border-radius: 10px; transition: transform 0.3s;">
+    </div>
+    <!-- Texto e información -->
+    <div class="col-md-6 about-text" style="padding-left: 20px;">
+      <h2 class="section-title mb-3" style="color: var(--primary-color); font-size: 2.5rem;">Sobre Nosotros</h2>
+      <p class="lead mb-4"></p>
+        Somos tres estudiantes de la <strong>Universidad del Rosario</strong> apasionados por la tecnología y la innovación en el sector salud. Nuestro objetivo es desarrollar una aplicación que modernice y facilite el acceso a servicios médicos, mejorando la experiencia tanto de pacientes como de profesionales.
+      </p>
+      <ul class="list-unstyled">
+        <li class="mb-2">
+          <strong>Innovación:</strong> Soluciones tecnológicas para transformar el sector salud.
+        </li>
+        <li class="mb-2">
+          <strong>Compromiso:</strong> Mejorar la experiencia de pacientes y profesionales.
+        </li>
+        <li class="mb-2">
+          <strong>Colaboración:</strong> Trabajo en equipo para alcanzar metas comunes.
+        </li>
+      </ul>
+    </div>
+      </ul>
+    </div>
+      </ul>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Invitación a Registrarse -->
+<div class="container register-invitation-section text-center py-5">
+
+  
+
+
+<!-- Información de Contacto Mejorada -->
+<div id="contact" class="contact-info mt-5 text-center">
+  <div class="contact-form mt-4">
+    <div class="card shadow-lg p-4" style="border-radius: 15px; background-color: #f8f9fa;">
+      <!-- Encabezado y descripción dentro de la caja -->
+      <h2 class="section-title mb-3 position-relative" style="color: var(--primary-color); font-size: 2.5rem;">
+        Contáctanos
+        
+      </h2>
+      <p class="lead mb-2" style="color: #555;">
+        Estamos aquí para ayudarte. Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos.
+        Nuestro equipo estará encantado de atenderte y resolver cualquier inquietud que tengas. ¡Tu satisfacción es nuestra prioridad!
+      </p>
+      <hr style="border-top: 1px solid #ccc;">
+      <!-- Formulario de Contacto -->
+      <form action="/send_message" method="POST" class="text-left mt-3">
+        <div class="form-group">
+          <label for="name" style="font-weight: bold;">Nombre</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="email" style="font-weight: bold;">Correo Electrónico</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Tu correo electrónico" required>
+        </div>
+        <div class="form-group">
+          <label for="message" style="font-weight: bold;">Mensaje</label>
+          <textarea class="form-control" id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3 w-100" style="background-color: var(--primary-color); border: none; border-radius: 25px;">
+          Enviar Mensaje
+        </button>
+      </form>
+    </div>
+  </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3" style="background-color: var(--primary-color); color: #fff;">
+    © 2025 CitaMédica - Todos los derechos reservados.
+  </footer>
+
+
+  <!-- Scripts de Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

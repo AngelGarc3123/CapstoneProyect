@@ -1,0 +1,209 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Ajusta este valor según la altura de tu navbar */
+}
+/* Variables globales para la mayoría de la página */
+:root {
+    --primary-color: #4CAF50;   /* Verde principal */
+    --secondary-color: #E8F5E9; /* Fondo global claro */
+    --accent-color: #1B5E20;    /* Texto oscuro */
+    --navbar-bg: #ffffff;       /* Fondo de la navbar */
+  
+    /* Variables específicas para la sección de estadísticas */
+    --stats-primary-color: #66BB6A;   /* Verde más claro para destacar números */
+    --stats-secondary-color: #F1F8E9; /* Fondo verde muy sutil para estadísticas */
+}
+
+/* Estilos globales */
+body {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-bg) !important;
+}
+.navbar-brand, .nav-link {
+    color: var(--accent-color) !important;
+}
+.navbar-brand:hover, .nav-link:hover {
+    color: #388E3C !important;
+}
+
+/* Contenedor del logo en la navbar */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.logo-container img {
+    border-radius: 50%;         /* Logo en círculo */
+    border: 2px solid var(--primary-color); /* Borde verde para resaltar */
+    max-height: 50px;           /* Ajusta la altura del logo */
+    margin-right: 10px;
+}
+
+/* Tarjeta principal que contiene el saludo (Hero Card) */
+.hero-card {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+.hero-card h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero-card p {
+    font-size: 1.1rem;
+}
+.hero-card .btn {
+    background-color: var(--accent-color);
+    border: none;
+}
+.hero-card .btn:hover {
+    background-color: #2E7D32;
+}
+/* Sección de estadísticas sin fondo verde sutil */
+.stats-section {
+    border-radius: 8px;
+    padding: 3rem 1rem;
+    margin: 2rem auto;
+}
+.stats-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+.stats-section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+.stats-item {
+    background-color: #ffffff;
+    border: 1px solid #C8E6C9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+.stats-item:hover {
+    transform: translateY(-5px);
+}
+.stats-item img {
+    max-height: 60px;
+    margin-bottom: 0.5rem;
+}
+.stats-item h3 {
+    color: var(--stats-primary-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+}
+.stats-item p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    color: var(--accent-color);
+}
+@media (min-width: 768px) {
+    .stats-row {
+        display: flex;
+        justify-content: space-between;
+    }
+    .stats-item {
+        flex: 0 0 32%;
+        margin-bottom: 0;
+    }
+}
+
+/* Sección: ¿Qué ofrecemos? */
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80%; /* Más ancho para abarcar más del título */
+    height: 4px; /* Línea más delgada */
+    background: var(--primary-color); /* Solo el color primario */
+    border-radius: 2px; /* Borde más sutil */
+}
+
+/* Texto de descripción */
+.info-text p.lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--accent-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Listas destacadas */
+.info-text ul li {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--accent-color);
+}
+
+.info-text strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Imagen con efecto */
+.info-image {
+    max-height: 400px;
+    border-radius: 8px;
+    border: 4px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.info-image:hover {
+    transform: scale(1.03);
+}
+/* Parece que el código seleccionado está vacío y no tiene ningún efecto. 
+    Si no es necesario, puedes eliminarlo para evitar confusiones. */
+
+    .card {
+      border-radius: 15px;
+      border: none;
+    }
+    .form-label {
+      font-weight: bold;
+      color: var(--text-color);
+    }
+    .btn-primary {
+      background-color: var(--primary-color);
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #388E3C;
+    }
+    .btn-secondary {
+      background-color: #6c757d;
+      border: none;
+    }
+    a {
+      color: var(--primary-color);
+    }
+    a:hover {
+      color: #388E3C;
+    }

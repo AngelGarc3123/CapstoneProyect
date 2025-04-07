@@ -1,0 +1,12 @@
+[
+    {
+        "nombre": "Angel",
+        "apellidos": "Garcia",
+        "dni": "1234567890",
+        "dob": "2000-04-02",
+        "telefono": "3001234567",
+        "email": "carlos.ramirez@urosario.edu.co",
+        "password": "Secure1!pass",
+        "tipo": "usuario"
+    }
+]
